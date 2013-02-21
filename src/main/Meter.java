@@ -6,20 +6,17 @@
  * To change this template use File | Settings | File Templates.
  */
 public class Meter {
-    private int length;
+    public double length;
 
-    public Meter(int length) {
-        this.length = length;
-    }
+    public Meter(double lengthInMeter) {
+        this.length = lengthInMeter;
 
-    public double getBaseValue(){
-        return 1.0;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null) return false;
 
         Meter meter = (Meter) o;
 
@@ -30,6 +27,14 @@ public class Meter {
 
     @Override
     public int hashCode() {
-        return (length);
+        return (int)(length);
+    }
+
+    public Meter add(Meter num) {
+        return new Meter(this.length + num.length);
+    }
+
+    public Meter mul(int i) {
+        return new Meter(length * i);
     }
 }

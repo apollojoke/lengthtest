@@ -5,5 +5,8 @@
  * Time: 4:58 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Millimeter {
+public class Millimeter extends Meter {
+    public Millimeter(double lengthInMillimeter) {
+        super(lengthInMillimeter /1000);
+    }
 }

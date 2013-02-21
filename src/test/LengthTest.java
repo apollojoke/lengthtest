@@ -21,13 +21,37 @@ public class LengthTest {
 
     @Test
     public void shouldEqualBetweenCentimeter() throws Exception {
-//        Meter meter = new Meter(1);
-//        Centimeter centimeter = new Centimeter(100);
-//        double meterValue;
-//        meterValue = meter.getBaseValue();
-//        meterValue = meter.length * meterValue;
-//
-//        assertThat(centimeter * centimeter.getBaseValue() , is(meter));
+        Meter meter = new Meter(1);
+        Centimeter centimeter = new Centimeter(100);
+        assertThat(centimeter , is(meter));
 
+    }
+
+    @Test
+    public void shouldEqualBetweenMillimeter() throws Exception {
+        Meter meter = new Meter(1);
+        Millimeter millimeter = new Millimeter(1000);
+        assertThat(millimeter, is(meter));
+    }
+
+    @Test
+    public void shouldAddInMeter() throws Exception {
+        Meter meter1 = new Meter(1);
+        Meter meter2 = new Meter(2);
+        assertThat(meter1.add(meter2), is(new Meter(3)));
+    }
+
+    @Test
+    public void shouldAddInCentimeter() throws Exception {
+        Meter meter = new Meter(1);
+        Centimeter centimeter = new Centimeter(2);
+        System.out.println(centimeter.length);
+        assertThat(meter.add(centimeter),is(new Meter(1.02)));
+    }
+
+    @Test
+    public void shouldMulInMeter() throws Exception {
+        Meter meter = new Meter(1);
+        assertThat(meter.mul(2),is(new Meter(2)));
     }
 }
